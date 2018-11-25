@@ -1,0 +1,183 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html {
+  background-color: #20b2aa;
+  font-family: 'Comfortaa', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  width: 1360px;
+  margin-top: 10%;
+  position: relative;
+  overflow: hidden;
+  left: 0;
+}
+
+.item-container {
+  left: 0;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  transition: left 1s ease-in-out;
+}
+
+.item {
+  min-width: 320px;
+  height: 488px;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 5px .5vh 5px 0px rgba(0,0,0,.25);
+  overflow: hidden;
+}
+
+.item__information {
+  padding: 10px;
+}
+
+.item__list li{
+  padding-bottom: 10px;
+}
+
+.item__general {
+  text-align: center;
+  font-weight: 900;
+  color: rgb(85, 85, 85);
+}
+
+.item__general i {
+  float: left;
+  font-size: 1.5em;
+}
+
+.item__list a {
+  text-decoration: none;
+  color: #000;
+}
+
+.item__title {
+  color: #157570;
+}
+
+.item__title:hover {
+  color: #20b2aa;
+}
+
+.item__description {
+  padding-top: 10px;
+}
+
+.item-container {
+    --n: 1;
+    transform: translate(calc(var(--tx, 0px) + var(--i, 0)/var(--n)*-100%));
+}
+
+.smooth { transition: transform  calc(var(--f, 1)*.5s) ease-out }
+
+.search-form {
+  margin: 30px auto;
+  max-width:80%
+}
+.search-form__input {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid #20b2aa;
+  float: left;
+  width: 90%;
+  background: #f1f1f1;
+}
+
+.search-form__button {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: #37bd80;
+  color: white;
+  font-size: 17px;
+  border: 1px solid #20b2aa;
+  border-left: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.search-form__button:hover {
+  background: #157570;
+}
+
+.search-form::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.navigation-list {
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.navigation li {
+  margin: 0.5em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  line-height: 1.8em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+li.navigation-list__item--active {
+  background-color: #fff;
+  color: #20b2aa;
+  border-radius: 50%;
+  display: block !important;
+}
+
+.navigation-list__item--next,
+.navigation-list__item--prev, {
+  display: block !important;
+}
+
+.navigation-list__item {
+  color: #fff;
+  display: none;
+}
+
+.navigation-list__item
+.navigation li:hover:not(.navigation-list__item--active) {
+  background-color: rgba(221, 221, 221, 0.705);
+  border-radius: 100%;
+}
